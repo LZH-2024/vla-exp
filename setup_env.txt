@@ -2,7 +2,8 @@
 
 # ==================== 1. 系统依赖 ====================
 sudo apt update -y
-sudo apt install -y ffmpeg build-essential cmake pkg-config
+sudo apt install -y build-essential cmake pkg-config
+sudo apt install -y ffmpeg libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libavdevice-dev libavfilter-dev libswresample-dev
 
 # 确认 Python 版本
 python --version
