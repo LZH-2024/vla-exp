@@ -2,13 +2,13 @@
 
 # ==================== 1. 系统依赖 ====================
 sudo apt update -y
-sudo apt install -y python3.12 python3.12-venv python3.12-dev ffmpeg build-essential cmake pkg-config
+sudo apt install -y ffmpeg build-essential cmake pkg-config
 
 # 确认 Python 版本
-python3.12 --version
+python --version
 
 # ==================== 2. 创建虚拟环境 ====================
-python3.12 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 
 # 升级 pip
