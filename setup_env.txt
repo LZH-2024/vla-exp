@@ -1,0 +1,39 @@
+# Ubuntu 22.04 + Python 3.12 + CUDA 12.8
+
+# ==================== 1. 系统依赖 ====================
+sudo apt update -y
+sudo apt install -y python3.12 python3.12-venv python3.12-dev ffmpeg build-essential cmake pkg-config
+
+# 确认 Python 版本
+python3.12 --version
+
+# ==================== 2. 创建虚拟环境 ====================
+python3.12 -m venv .venv
+source .venv/bin/activate
+
+# 升级 pip
+pip install --upgrade pip setuptools wheel
+
+# ==================== 3. 安装 PyTorch（CUDA 12.8） ====================
+# 有 GPU 时用这个
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# 没有 GPU 时用这个
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# 验证
+python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+
+# ==================== 4. 安装基础依赖 ====================
+pip install -r requirements/base.txt
+
+# ==================== 5. 安装 LeRobot ====================
+pip install "lerobot[training,smolvla,libero]"
+
+# ==================== 6. 安装 GPU 额外依赖（可选） ====================
+pip install -r requirements/gpu.txt
+
+# ==================== 完成 ====================
+# 之后每次使用前：
+# source .venv/bin/activate
+# export MUJOCO_GL=egl

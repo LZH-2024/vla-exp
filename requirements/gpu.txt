@@ -1,0 +1,9 @@
+# GPU extras (install after base.txt + PyTorch CUDA)
+# These are typically already covered by LeRobot extras
+
+# Optional: PEFT for LoRA fine-tuning
+peft
+
+# Optional: for better performance
+# ninja
+# flash-attn  # install separately if needed, version sensitive

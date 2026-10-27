@@ -1,0 +1,39 @@
+# Base requirements (shared between CPU and GPU)
+# Install these after PyTorch is installed
+
+# Core scientific / ML
+numpy>=1.26,<2.3
+scipy
+pandas
+matplotlib
+seaborn
+tqdm
+pyyaml
+omegaconf
+einops
+
+# Hugging Face ecosystem
+huggingface_hub
+datasets
+accelerate
+safetensors
+transformers
+diffusers
+
+# Video / dataset utilities
+av
+torchcodec
+jsonlines
+
+# Experiment tracking
+wandb
+
+# Utilities
+pillow
+opencv-python-headless
+tyro
+draccus
+
+# Development
+ipython
+jupyter
